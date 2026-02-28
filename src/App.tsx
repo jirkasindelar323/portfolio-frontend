@@ -48,7 +48,8 @@ function App() {
         <h1>My Portfolio</h1>
       </header>
       <main>
-        {info && <PersonalInfoCard info={info} />}
+        // info is optional because it might fail to load, but projects and skills will just be empty arrays if they fail
+        {info && <PersonalInfoCard info={info} />} 
         <ProjectsSection projects={projects} />
         <SkillsSection skills={skills} />
       </main>

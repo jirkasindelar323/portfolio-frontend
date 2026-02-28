@@ -1,5 +1,6 @@
 export interface PersonalInfo {
   name: string;
+  pronunciation: string;
   title: string;
   bio: string;
   email: string;

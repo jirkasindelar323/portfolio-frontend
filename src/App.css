@@ -51,6 +51,13 @@ h2 {
   margin-bottom: 0.5rem;
 }
 
+.pronunciation {
+  color: #7f8c8d;
+  font-size: 1rem;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
 .card h2 {
   color: #7f8c8d;
   font-size: 1.2rem;

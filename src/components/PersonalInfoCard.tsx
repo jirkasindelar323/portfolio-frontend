@@ -8,6 +8,7 @@ export function PersonalInfoCard({ info }: Props) {
   return (
     <section className="card">
       <h1>{info.name}</h1>
+      {info.pronunciation && <p className="pronunciation">({info.pronunciation})</p>}
       <h2>{info.title}</h2>
       <p>{info.bio}</p>
       <div className="contact-info">
