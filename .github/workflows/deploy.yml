@@ -25,13 +25,10 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Install Railway CLI
-        run: |
-          curl -fsSL https://railway.app/install.sh | sh
-
       - name: Deploy to Railway
-        run: |
-          railway link ${{ secrets.RAILWAY_PROJECT_ID }}
-          railway up
-        env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+        uses: amondnet/railway-action@v25
+        with:
+          railway_token: ${{ secrets.RAILWAY_TOKEN }}
+          project_id: ${{ secrets.RAILWAY_PROJECT_ID }}
+          service_id: ${{ secrets.RAILWAY_SERVICE_ID }}
+          args: up
