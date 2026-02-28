@@ -25,10 +25,12 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Install Railway CLI
+        run: |
+          npm install -g @railway/cli
+
       - name: Deploy to Railway
-        uses: amondnet/railway-action@v25
-        with:
-          railway_token: ${{ secrets.RAILWAY_TOKEN }}
-          project_id: ${{ secrets.RAILWAY_PROJECT_ID }}
-          service_id: ${{ secrets.RAILWAY_SERVICE_ID }}
-          args: up
+        run: railway up
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_PROJECT_ID: ${{ secrets.RAILWAY_PROJECT_ID }}
