@@ -1,4 +1,5 @@
 import type { Project } from '../types';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 interface Props {
   projects: Project[];
@@ -13,14 +14,16 @@ export function ProjectsSection({ projects }: Props) {
           <div key={index} className="project-card">
             <h3>{project.name}</h3>
             <p>{project.description}</p>
-            <p className="tech-stack">Tech: {project.techStack}</p>
+            <p className="tech-stack">
+              <strong>Tech:</strong> {project.techStack}
+            </p>
             <div className="links">
-              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                GitHub
+              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="project-link">
+                <FaGithub /> Code
               </a>
               {project.liveUrl && (
-                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                  Live Demo
+                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="project-link">
+                  <FaExternalLinkAlt /> Demo
                 </a>
               )}
             </div>
