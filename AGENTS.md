@@ -105,3 +105,45 @@ src/
 ## Environment
 - API base URL: `/api` (configure via proxy in vite.config.ts if needed)
 - No environment variables currently used
+
+---
+
+## Full-Stack Context
+
+This frontend is part of a complete portfolio website project consisting of:
+
+| Component | Repository | Purpose |
+|-----------|------------|---------|
+| Frontend | `portfolio-frontend` (this repo) | React/TypeScript UI |
+| Backend | github.com/jirkasindelar323/portfolio | API serving portfolio data |
+| Deployment | Railway | Hosting both FE + BE |
+| Secrets | GitHub Secrets + Railway Variables | API keys, tokens, config |
+
+### Current Intentions & Plans
+
+*(Update this section when working on new features)*
+
+- **Frontend**: Display personal info, projects, and skills from backend API
+- **Backend**: Serves data at `/api/info`, `/api/projects`, `/api/skills`
+- **Deployment**: Both deployed on Railway with environment variables
+
+### Synchronization Protocol
+
+When working across the full stack:
+
+1. **Before starting work**: Check this file and any shared notes
+2. **When deploying**: Note URL changes in this file
+3. **When adding secrets**: Document which service holds what (GitHub vs Railway)
+4. **When creating new features**: Note the intention and affected components
+
+### API Contract
+
+The frontend expects these endpoints from the backend:
+
+```
+GET /api/info  → { name, pronunciation, title, bio, email, github, linkedin, location }
+GET /api/projects → [{ name, description, techStack, githubUrl, liveUrl }]
+GET /api/skills → [{ name, category, proficiency }]
+```
+
+*(Keep these in sync with backend if changes occur)*
